@@ -225,7 +225,7 @@ NC_mktmp(const char* base)
 	_mktemp_s(tmp,sizeof(tmp)-1);
 #else /*!_MSC_VER*/
         mktemp(tmp);
-	tmo[sizeof[tmp]-1] = '\0';
+	tmp[sizeof(tmp)-1] = '\0';
 #endif
 #else /* !HAVE_MKTEMP */
 	/* Need to simulate by using some kind of pseudo-random number */
